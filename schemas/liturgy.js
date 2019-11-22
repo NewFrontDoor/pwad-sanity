@@ -1,17 +1,35 @@
+function toPlainText(blocks = []) {
+  return blocks
+    // loop through each block
+    .map(block => {
+      // if it's not a text block with children, 
+      // return nothing
+      if (block._type !== 'block' || !block.children) {
+        return ''
+      }
+      // loop through the children spans, and join the
+      // text strings
+      return block.children.map(child => child.text).join('')
+    })
+    // join the parapgraphs leaving split by two linebreaks
+    .join('\n\n')
+}
+
 export default {
   name: 'liturgy',
   title: 'Liturgy',
   type: 'document',
   fields: [
     {
-      name: 'name',
-      title: 'Name',
-      type: 'string'
-    },
-    {
       name: 'title',
       title: 'Title',
       type: 'string'
+    },
+    {
+      name: 'author',
+      title: 'Author',
+      type: 'reference',
+      to: [{type: 'author'}]
     },
     {
       name: 'content',
@@ -22,14 +40,7 @@ export default {
     {
       name: 'note',
       title: 'Note',
-      type: 'array',
-      of: [{type: 'block'}]
-    },
-    {
-      name: 'author',
-      title: 'Author',
-      type: 'reference',
-      to: [{type: 'author'}]
+      type: 'text'
     },
     {
       name: 'copyright',
@@ -41,13 +52,27 @@ export default {
       name: 'occasions',
       title: 'Occasions',
       type: 'array',
-      of: [{type: 'occasion'}]
+      of: [
+        {
+          type: 'reference',
+          to: [
+            {type: 'occasion'}
+          ]
+        }
+      ]
     },
     {
       name: 'keywords',
       title: 'Keywords',
       type: 'array',
-      of: [{type: 'keyword'}],
+      of: [
+        {
+          type: 'reference',
+          to: [
+            {type: 'keyword'}
+          ]
+        }
+      ],
       options: {
         layout: 'tags'
       }
@@ -56,7 +81,29 @@ export default {
       name: 'files',
       title: 'Files',
       type: 'array',
-      of: [{type: 'asset'}]
+      of: [
+        {
+          type: 'reference',
+          to: [
+            {type: 'asset'}
+          ]
+        }
+      ]
     }
-  ]
+  ],
+  preview: {
+    select: {
+      title: 'title',
+      subtitle: 'author.name',
+      preview: 'content'
+    },
+    prepare(selection) {
+      const {title, subtitle, preview} = selection
+      return {
+        title: title,
+        subtitle: subtitle ? subtitle : 'No listed source',
+        description: toPlainText(preview)
+      }
+    }
+  }
 }

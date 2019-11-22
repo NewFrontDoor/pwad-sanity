@@ -4,11 +4,6 @@ export default {
   type: 'document',
   fields: [
     {
-      name: 'name',
-      title: 'Name',
-      type: 'string'
-    },
-    {
       name: 'title',
       title: 'Title',
       type: 'string'
@@ -46,13 +41,27 @@ export default {
       name: 'occasions',
       title: 'Occasions',
       type: 'array',
-      of: [{type: 'occasion'}]
+      of: [
+        {
+          type: 'reference',
+          to: [
+            {type: 'occasion'}
+          ]
+        }
+      ]
     },
     {
       name: 'keywords',
       title: 'Keywords',
       type: 'array',
-      of: [{type: 'keyword'}],
+      of: [
+        {
+          type: 'reference',
+          to: [
+            {type: 'keyword'}
+          ]
+        }
+      ],
       options: {
         layout: 'tags'
       }

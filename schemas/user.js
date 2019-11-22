@@ -11,8 +11,7 @@ export default {
     {
       name: 'email',
       title: 'Email',
-      type: 'reference',
-      to: [{type: 'metre'}]
+      type: 'string',
     },
     {
       name: 'hasFreeAccount',

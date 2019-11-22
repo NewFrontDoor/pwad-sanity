@@ -22,12 +22,6 @@ export default {
           ]
         }
       ]
-    },
-    {
-      name: 'menu',
-      title: 'Menu',
-      type: 'reference',
-      to: [{type: 'menu'}]
     }
   ]
 }

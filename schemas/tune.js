@@ -24,7 +24,14 @@ export default {
       name: 'files',
       title: 'Files',
       type: 'array',
-      of: [{type: 'asset'}]
+      of: [
+        {
+          type: 'reference',
+          to: [
+            {type: 'asset'}
+          ]
+        }
+      ]
     },
     {
       name: 'musicCopyright',

@@ -6,6 +6,12 @@ export default {
     {
       name: 'name',
       title: 'Name',
-      type: 'string'
-    }]
+      type: 'text',
+      rows: 4
+    }],
+    preview: {
+      select: {
+        title: 'name'
+      }
+    }
 }
