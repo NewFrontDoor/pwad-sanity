@@ -6,7 +6,11 @@ export default {
     {
       name: 'name',
       title: 'Name',
-      type: 'string'
+      type: 'object',
+      fields: [
+        {name: 'last', type: 'string', title: 'Last'},
+        {name: 'first', type: 'string', title: 'First'}
+      ]
     },
     {
       name: 'email',
@@ -43,7 +47,7 @@ export default {
         name: 'hymns',
         title: 'Hymns',
         type: 'array',
-        of: [{type: 'reference', to: [{type: 'hymn'}]}]
+        of: [{type: 'reference', to: [{type: 'hymn'}]},{type: 'reference', to: [{type: 'liturgy'}]},{type: 'reference', to: [{type: 'prayer'}]},{type: 'reference', to: [{type: 'scripture'}]}]
       }]
     },
     {
