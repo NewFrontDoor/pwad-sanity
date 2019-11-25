@@ -48,7 +48,15 @@ export default {
         title: 'Hymns',
         type: 'array',
         of: [
-          {type: 'reference', to: [{type: 'hymn'},{type: 'liturgy'},{type: 'scripture'},{type: 'prayer'}]}]
+          {
+            type: 'reference', to: [
+              {type: 'hymn'},
+              {type: 'liturgy'},
+              {type: 'scripture'},
+              {type: 'prayer'}
+            ]
+          }
+        ]
       }]
     },
     {

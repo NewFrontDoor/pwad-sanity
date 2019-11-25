@@ -1,9 +1,9 @@
 :root {
   --brand-darkest: #114599;
-  --brand-lightest: #c4dbf6;
+  --brand-lightest: #f0f5fc;
   --gray-base: #333840;
   --brand-primary: #3272d9;
-  --brand-primary--inverted: #fff;
+  --brand-primary--inverted: #f0f5fc;
   --brand-secondary: #f43;
   --brand-secondary--inverted: #fff;
   --main-navigation-color: #114599;

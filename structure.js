@@ -15,21 +15,9 @@ export default () => {
             .documentId('global-main')
         ),
       S.listItem()
-        .title('Content')
+        .title('Pages')
         .child(
-          S.list()
-            .title('Content')
-            .items([
-              S.listItem()
-                .title('Page Contents')
-                .child(S.documentTypeList('pageContent').title('Page Contents')),
-              S.listItem()
-                .title('Resources')
-                .child(S.documentTypeList('resource').title('Resources')),
-              S.listItem()
-                .title('Files')
-                .child(S.documentTypeList('asset').title('Files'))
-            ])
+          S.documentTypeList('pageContent').title('Page content')
         ),
       S.listItem()
         .title('Resources')
@@ -48,7 +36,10 @@ export default () => {
                 .child(S.documentTypeList('liturgy').title('Liturgies')),
               S.listItem()
                 .title('Scriptures')
-                .child(S.documentTypeList('scripture').title('Scriptures'))
+                .child(S.documentTypeList('scripture').title('Scriptures')),
+              S.listItem()
+                .title('Files')
+                .child(S.documentTypeList('asset').title('Files'))
             ])
         ),
         S.listItem()

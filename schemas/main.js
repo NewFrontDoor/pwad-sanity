@@ -65,7 +65,21 @@ export default {
                   to: [
                     {
                       type: 'pageContent',
-                      type: 'asset'
+                    },
+                    {
+                      type: 'hymn',
+                    },
+                    {
+                      type: 'prayer',
+                    },
+                    {
+                      type: 'liturgy',
+                    },
+                    {
+                      type: 'scripture',
+                    },
+                    {
+                      type: 'asset',
                     }
                   ]
                 }
