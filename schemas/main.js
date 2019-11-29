@@ -2,44 +2,46 @@ export default {
   name: 'main',
   title: 'Main',
   type: 'document',
-  __experimental_actions: [/*'create',*/ 'update', /*'delete',*/ 'publish'],
+  __experimental_actions: [/* 'create', */ 'update', /* 'delete', */ 'publish'],
   fields: [
     {
       title: 'Heading',
       name: 'heading',
-      type: 'string',
+      type: 'string'
     },
     {
       title: 'Sub-heading',
       name: 'subheading',
-      type: 'string',
+      type: 'string'
     },
     {
       title: 'Home blurb',
       name: 'blurb',
       description: 'This is the blurb that resides on the front page',
-      type: 'array',
-      of: [{type: 'block'}]
+      type: 'content'
     },
     {
       title: 'Search blurb',
       name: 'searchblurb',
-      description: 'This is the blurb that accompanies the search box on the front page',
-      type: 'array',
-      of: [{type: 'block'}]
+      description:
+        'This is the blurb that accompanies the search box on the front page',
+      type: 'content'
     },
     {
       title: 'Featured links',
       name: 'featured',
-      description:
-        'Add segments below to feature on the front page',
+      description: 'Add segments below to feature on the front page',
       type: 'array',
       of: [
         {
           type: 'reference',
           title: 'Segment',
           description: 'Pick a segment from the dropdown list below',
-          to: [{type: 'pageContent'}]
+          to: [
+            {type: 'pageContent'},
+            {type: 'externalUrl'},
+            {type: 'relativeUrl'}
+          ]
         }
       ]
     },
@@ -63,24 +65,12 @@ export default {
                   title: 'Child page',
                   description: 'Pick a page from the dropdown list below',
                   to: [
-                    {
-                      type: 'pageContent',
-                    },
-                    {
-                      type: 'hymn',
-                    },
-                    {
-                      type: 'prayer',
-                    },
-                    {
-                      type: 'liturgy',
-                    },
-                    {
-                      type: 'scripture',
-                    },
-                    {
-                      type: 'asset',
-                    }
+                    {type: 'pageContent'},
+                    {type: 'hymn'},
+                    {type: 'prayer'},
+                    {type: 'liturgy'},
+                    {type: 'scripture'},
+                    {type: 'asset'}
                   ]
                 }
               ]

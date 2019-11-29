@@ -14,13 +14,21 @@ export default {
     {
       name: 'slug',
       title: 'Slug',
-      type: 'slug'
+      type: 'slug',
+      options: {
+        source: 'title',
+        maxLength: 200, // Will be ignored if slugify is set
+        slugify: input =>
+          input
+            .toLowerCase()
+            .replace(/\s+/g, '-')
+            .slice(0, 200)
+      }
     },
     {
       name: 'content',
       title: 'Content',
-      type: 'array',
-      of: [{type: 'block'}]
+      type: 'content'
     }
   ],
   preview: {

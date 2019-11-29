@@ -11,8 +11,7 @@ export default {
     {
       name: 'bio',
       title: 'Biography',
-      type: 'array',
-      of: [{type: 'block'}]
+      type: 'content'
     },
     {
       name: 'dates',

@@ -27,9 +27,7 @@ export default {
       of: [
         {
           type: 'reference',
-          to: [
-            {type: 'asset'}
-          ]
+          to: [{type: 'asset'}]
         }
       ]
     },
@@ -38,6 +36,6 @@ export default {
       title: 'Music Copyright',
       type: 'reference',
       to: [{type: 'copyright'}]
-    },
+    }
   ]
-}
+};

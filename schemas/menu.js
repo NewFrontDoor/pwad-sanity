@@ -20,8 +20,8 @@ export default {
       options: {
         list: [
           {title: 'Menu list', value: 'list'},
-          {title: 'Menu link', value: 'link'},
-        ],
+          {title: 'Menu link', value: 'link'}
+        ]
       }
     },
     {
@@ -31,4 +31,4 @@ export default {
       to: [{type: 'pageContent'}]
     }
   ]
-}
+};

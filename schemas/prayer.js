@@ -1,18 +1,21 @@
 function toPlainText(blocks = []) {
-  return blocks
-    // loop through each block
-    .map(block => {
-      // if it's not a text block with children, 
-      // return nothing
-      if (block._type !== 'block' || !block.children) {
-        return ''
-      }
-      // loop through the children spans, and join the
-      // text strings
-      return block.children.map(child => child.text).join('')
-    })
-    // join the parapgraphs leaving split by two linebreaks
-    .join('\n\n')
+  return (
+    blocks
+      // Loop through each block
+      .map(block => {
+        // if it's not a text block with children,
+        // return nothing
+        if (block._type !== 'block' || !block.children) {
+          return '';
+        }
+
+        // Loop through the children spans, and join the
+        // text strings
+        return block.children.map(child => child.text).join('');
+      })
+      // Join the parapgraphs leaving split by two linebreaks
+      .join('\n\n')
+  );
 }
 
 export default {
@@ -34,8 +37,7 @@ export default {
     {
       name: 'content',
       title: 'Prayer content',
-      type: 'array',
-      of: [{type: 'block'}]
+      type: 'content'
     },
     {
       name: 'note',
@@ -49,9 +51,7 @@ export default {
       of: [
         {
           type: 'reference',
-          to: [
-            {type: 'occasion'}
-          ]
+          to: [{type: 'occasion'}]
         }
       ]
     },
@@ -68,9 +68,7 @@ export default {
       of: [
         {
           type: 'reference',
-          to: [
-            {type: 'keyword'}
-          ]
+          to: [{type: 'keyword'}]
         }
       ],
       options: {
@@ -84,9 +82,7 @@ export default {
       of: [
         {
           type: 'reference',
-          to: [
-            {type: 'category'}
-          ]
+          to: [{type: 'category'}]
         }
       ]
     }
@@ -98,12 +94,12 @@ export default {
       preview: 'content'
     },
     prepare(selection) {
-      const {title, subtitle, preview} = selection
+      const {title, subtitle, preview} = selection;
       return {
-        title: title,
+        title,
         subtitle: subtitle ? subtitle : 'No listed author',
         description: toPlainText(preview)
-      }
+      };
     }
   }
-}
+};

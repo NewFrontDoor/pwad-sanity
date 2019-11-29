@@ -15,13 +15,9 @@ export default {
       of: [
         {
           type: 'reference',
-          to: [
-            {type: 'asset'},
-            {type: 'url'},
-            {type: 'pageContent'}
-          ]
+          to: [{type: 'asset'}, {type: 'url'}, {type: 'pageContent'}]
         }
       ]
     }
   ]
-}
+};

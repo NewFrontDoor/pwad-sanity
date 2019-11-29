@@ -1,4 +1,3 @@
-import React from 'react';
 import S from '@sanity/desk-tool/structure-builder';
 
 export default () => {
@@ -16,9 +15,7 @@ export default () => {
         ),
       S.listItem()
         .title('Pages')
-        .child(
-          S.documentTypeList('pageContent').title('Page content')
-        ),
+        .child(S.documentTypeList('pageContent').title('Page content')),
       S.listItem()
         .title('Resources')
         .child(
@@ -42,39 +39,38 @@ export default () => {
                 .child(S.documentTypeList('asset').title('Files'))
             ])
         ),
-        S.listItem()
-          .title('Other')
-          .child(
-            S.list()
-              .title('Other')
-              .items([
-                S.listItem()
-                  .title('Authors')
-                  .child(S.documentTypeList('author').title('Authors')),
-                S.listItem()
-                  .title('Categories')
-                  .child(S.documentTypeList('category').title('Categories')),
-                S.listItem()
-                  .title('Copyrights')
-                  .child(S.documentTypeList('copyright').title('Copyrights')),
-                S.listItem()
-                  .title('Keywords')
-                  .child(S.documentTypeList('keyword').title('Keywords')),
-                S.listItem()
-                  .title('Metres')
-                  .child(S.documentTypeList('metre').title('Metres')),
-                S.listItem()
-                  .title('Occasions')
-                  .child(S.documentTypeList('occasion').title('Occasions')),
-                S.listItem()
-                  .title('Tunes')
-                  .child(S.documentTypeList('tune').title('Tunes'))
-              ])
-          ),
-          S.listItem()
-          .title('Users')
-          .child(
-            S.documentTypeList('user').title('Users')
-          )
+      S.divider(),
+      S.listItem()
+        .title('Other')
+        .child(
+          S.list()
+            .title('Other')
+            .items([
+              S.listItem()
+                .title('Authors')
+                .child(S.documentTypeList('author').title('Authors')),
+              S.listItem()
+                .title('Categories')
+                .child(S.documentTypeList('category').title('Categories')),
+              S.listItem()
+                .title('Copyrights')
+                .child(S.documentTypeList('copyright').title('Copyrights')),
+              S.listItem()
+                .title('Keywords')
+                .child(S.documentTypeList('keyword').title('Keywords')),
+              S.listItem()
+                .title('Metres')
+                .child(S.documentTypeList('metre').title('Metres')),
+              S.listItem()
+                .title('Occasions')
+                .child(S.documentTypeList('occasion').title('Occasions')),
+              S.listItem()
+                .title('Tunes')
+                .child(S.documentTypeList('tune').title('Tunes'))
+            ])
+        ),
+      S.listItem()
+        .title('Users')
+        .child(S.documentTypeList('user').title('Users'))
     ]);
 };

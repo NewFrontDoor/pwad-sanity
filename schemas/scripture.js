@@ -11,14 +11,12 @@ export default {
     {
       name: 'content',
       title: 'Content',
-      type: 'array',
-      of: [{type: 'block'}]
+      type: 'content'
     },
     {
       name: 'note',
       title: 'Note',
-      type: 'array',
-      of: [{type: 'block'}]
+      type: 'content'
     },
     {
       name: 'translation',
@@ -44,9 +42,7 @@ export default {
       of: [
         {
           type: 'reference',
-          to: [
-            {type: 'occasion'}
-          ]
+          to: [{type: 'occasion'}]
         }
       ]
     },
@@ -57,9 +53,7 @@ export default {
       of: [
         {
           type: 'reference',
-          to: [
-            {type: 'keyword'}
-          ]
+          to: [{type: 'keyword'}]
         }
       ],
       options: {
@@ -67,4 +61,4 @@ export default {
       }
     }
   ]
-}
+};

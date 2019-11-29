@@ -39,8 +39,7 @@ export default {
     {
       name: 'content',
       title: 'Lyrics',
-      type: 'array',
-      of: [{type: 'block'}]
+      type: 'textOnlyContent'
     },
     {
       name: 'tune',

@@ -15,7 +15,7 @@ export default {
     {
       name: 'email',
       title: 'Email',
-      type: 'string',
+      type: 'string'
     },
     {
       name: 'hasFreeAccount',
@@ -31,56 +31,49 @@ export default {
       name: 'googleProviderId',
       title: 'Google Provider Id',
       type: 'string',
-      readonly: true
-    },
-    {
-      name: 'password',
-      title: 'Password',
-      type: 'string',
-      readOnly: true
+      readonly: true,
+      hidden: true
     },
     {
       name: 'shortlist',
       title: 'Shortlist',
-      type: 'object',
-      fields: [{
-        name: 'hymns',
-        title: 'Hymns',
-        type: 'array',
-        of: [
-          {
-            type: 'reference', to: [
-              {type: 'hymn'},
-              {type: 'liturgy'},
-              {type: 'scripture'},
-              {type: 'prayer'}
-            ]
-          }
-        ]
-      }]
+      type: 'array',
+      of: [
+        {
+          type: 'reference',
+          to: [
+            {type: 'hymn'},
+            {type: 'liturgy'},
+            {type: 'scripture'},
+            {type: 'prayer'}
+          ]
+        }
+      ]
     },
     {
       name: 'permission',
       title: 'Permissions',
       type: 'object',
-      fields: [{
-        name: 'isprotected',
-        title: 'Is protected',
-        type: 'boolean',
-        readOnly: true
-      },
-      {
-        name: 'role',
-        title: 'Role',
-        type: 'string',
-        options: {
-          list: [
-            {title: 'Admin', value: 'admin'},
-            {title: 'Committee', value: 'committee'},
-            {title: 'Public', value: 'public'}
-          ]
+      fields: [
+        {
+          name: 'isprotected',
+          title: 'Is protected',
+          type: 'boolean',
+          readOnly: true
+        },
+        {
+          name: 'role',
+          title: 'Role',
+          type: 'string',
+          options: {
+            list: [
+              {title: 'Admin', value: 'admin'},
+              {title: 'Committee', value: 'committee'},
+              {title: 'Public', value: 'public'}
+            ]
+          }
         }
-      }]
+      ]
     }
   ]
-}
+};

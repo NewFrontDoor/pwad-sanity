@@ -8,10 +8,11 @@ export default {
       title: 'Name',
       type: 'text',
       rows: 4
-    }],
-    preview: {
-      select: {
-        title: 'name'
-      }
     }
-}
+  ],
+  preview: {
+    select: {
+      title: 'name'
+    }
+  }
+};
