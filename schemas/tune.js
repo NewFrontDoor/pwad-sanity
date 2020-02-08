@@ -21,15 +21,9 @@ export default {
       to: [{type: 'author'}]
     },
     {
-      name: 'files',
-      title: 'Files',
-      type: 'array',
-      of: [
-        {
-          type: 'reference',
-          to: [{type: 'asset'}]
-        }
-      ]
+      name: 'file',
+      type: 'reference',
+      to: [{type: 'asset'}]
     },
     {
       name: 'musicCopyright',

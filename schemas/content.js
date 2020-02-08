@@ -30,7 +30,18 @@ export default {
               {
                 title: 'URL',
                 name: 'href',
-                type: 'url'
+                type: 'url',
+                validation: Rule =>
+                  Rule.uri({
+                    allowRelative: true,
+                    scheme: ['https', 'http', 'mailto', 'tel']
+                  })
+              },
+              {
+                title: 'Open in new tab',
+                name: 'blank',
+                description: 'Read https://css-tricks.com/use-target_blank/',
+                type: 'boolean'
               }
             ]
           },

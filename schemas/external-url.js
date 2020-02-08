@@ -13,8 +13,14 @@ export default {
       title: 'URL',
       type: 'url',
       options: {
-        scheme: ['https']
+        scheme: ['mailto', 'https']
       }
+    },
+    {
+      title: 'Open in new tab',
+      name: 'blank',
+      description: 'Read https://css-tricks.com/use-target_blank/',
+      type: 'boolean'
     }
   ]
 };

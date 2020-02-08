@@ -2,6 +2,7 @@ export default {
   name: 'menu',
   title: 'Menu',
   type: 'document',
+  __experimental_actions: [/*'create',*/ 'update', /*'delete',*/ 'publish'],
   fields: [
     {
       name: 'code',

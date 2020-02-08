@@ -3,33 +3,39 @@ import sanityClient from 'part:@sanity/base/client';
 
 export default function MenuReference({id}) {
   const [referenced, setReferenced] = useState(false);
-  const [fetched, setFetched] = useState(false);
-
   const query = `*[references("${id}")]`;
 
   useEffect(() => {
-    sanityClient.fetch(query).then(response => {
-      if (response[0] !== undefined) {
-        setReferenced({
-          items: response[0]._id === 'global-main'
-        });
+    const subscription = sanityClient.observable.fetch(query).subscribe({
+      next: res => {
+        if (res[0] !== undefined) {
+          setReferenced({
+            items: res[0]._id === 'global-main'
+          });
+        }
+      },
+      error: error => {
+        console.log('Observable failed:' + error);
+      },
+      complete: () => {
+        console.log('Complete');
       }
     });
-    setFetched(true);
+    return () => {
+      subscription.unsubscribe();
+    };
   }, [query]);
 
   return (
-    fetched && (
-      <div
-        key={id}
-        style={{
-          width: '20px',
-          height: '20px',
-          borderRadius: '50%',
-          border: `2px solid ${referenced ? 'rgb(25, 179, 102)' : 'red'}`,
-          backgroundColor: `${referenced ? 'rgb(25, 179, 102)' : 'none'}`
-        }}
-      />
-    )
+    <div
+      key={id}
+      style={{
+        width: '20px',
+        height: '20px',
+        borderRadius: '50%',
+        border: `2px solid ${referenced ? 'rgb(25, 179, 102)' : 'red'}`,
+        backgroundColor: `${referenced ? 'rgb(25, 179, 102)' : 'none'}`
+      }}
+    />
   );
 }

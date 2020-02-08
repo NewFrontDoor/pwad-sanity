@@ -8,14 +8,23 @@
     "dataset": "production"
   },
   "plugins": [
+    "@sanity/dashboard",
+    "dashboard-widget-structure-menu",
     "@sanity/base",
     "@sanity/components",
     "@sanity/default-layout",
     "@sanity/default-login",
     "@sanity/desk-tool",
-    "@sanity/vision"
+    "@sanity/vision",
+    "dashboard-widget-feed",
+    "dashboard-widget-document-chart",
+    "dashboard-widget-document-list"
   ],
   "parts": [
+    {
+      "implements": "part:@sanity/dashboard/config",
+      "path": "./dashboardConfig.js"
+    },
     {
       "name": "part:@sanity/base/schema",
       "path": "./schemas/schema.js"
@@ -31,6 +40,10 @@
     {
       "name": "part:@sanity/base/initial-value-templates",
       "path": "./initialValueTemplates.js"
+    },
+    {
+      "implements": "part:@sanity/base/document-actions/resolver",
+      "path": "resolveDocumentActions.js"
     }
   ]
 }
