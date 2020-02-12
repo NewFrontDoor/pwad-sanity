@@ -8,8 +8,22 @@ export default {
   fields: [
     {
       name: 'title',
-      title: 'Name',
+      title: 'Title',
       type: 'string'
+    },
+    {
+      name: 'subtitle',
+      title: 'Subtitle',
+      description:
+        'Leave blank if not needed and the subtitle field will be ignored',
+      type: 'string'
+    },
+    {
+      name: 'hasToc',
+      title: 'Display Table of Contents',
+      description:
+        'If checked, the page will output a Table of Contents built from the H2 headings',
+      type: 'boolean'
     },
     {
       name: 'slug',

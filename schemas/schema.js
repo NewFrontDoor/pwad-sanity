@@ -22,6 +22,7 @@ import pageContent from './page-content';
 import user from './user';
 import relativeUrl from './relative-url';
 import externalUrl from './external-url';
+import video from './video';
 
 export default createSchema({
   name: 'default',
@@ -46,6 +47,7 @@ export default createSchema({
     pageContent,
     user,
     relativeUrl,
-    externalUrl
+    externalUrl,
+    video
   ])
 });

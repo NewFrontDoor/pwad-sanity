@@ -1,4 +1,5 @@
 import {MdLink} from 'react-icons/md';
+import {FiAnchor} from 'react-icons/fi';
 
 export default {
   title: 'Content',
@@ -67,6 +68,15 @@ export default {
                 ]
               }
             ]
+          },
+          {
+            name: 'anchorpoint',
+            type: 'object',
+            title: 'Anchor ID',
+            blockEditor: {
+              icon: FiAnchor
+            },
+            fields: [{name: 'id', type: 'string', title: 'ID'}]
           }
         ]
       }
@@ -74,6 +84,9 @@ export default {
     {
       type: 'image',
       options: {hotspot: true}
+    },
+    {
+      type: 'video'
     }
   ]
 };

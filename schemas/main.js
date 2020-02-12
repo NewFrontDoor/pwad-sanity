@@ -61,17 +61,47 @@ export default {
               type: 'array',
               of: [
                 {
-                  type: 'reference',
-                  title: 'Child page',
-                  description: 'Pick a page from the dropdown list below',
-                  to: [
-                    {type: 'pageContent'},
-                    {type: 'hymn'},
-                    {type: 'prayer'},
-                    {type: 'liturgy'},
-                    {type: 'scripture'},
-                    {type: 'asset'}
-                  ]
+                  type: 'object',
+                  fields: [
+                    {
+                      type: 'reference',
+                      title: 'Child page',
+                      name: 'childPage',
+                      description: 'Pick a page from the dropdown list below',
+                      to: [
+                        {type: 'pageContent'},
+                        {type: 'hymn'},
+                        {type: 'prayer'},
+                        {type: 'liturgy'},
+                        {type: 'scripture'},
+                        {type: 'asset'}
+                      ]
+                    },
+                    {
+                      type: 'string',
+                      title: 'Alternate text',
+                      name: 'alternateText',
+                      description:
+                        'It may be desirable to have text different to the page/document title. If so, you can override it here.'
+                    }
+                  ],
+                  preview: {
+                    select: {
+                      name: 'childPage.name',
+                      title: 'childPage.title',
+                      alternateText: 'alternateText'
+                    },
+                    prepare(selection) {
+                      const {name, title, alternateText} = selection;
+                      return {
+                        title: alternateText
+                          ? alternateText
+                          : title
+                          ? title
+                          : name
+                      };
+                    }
+                  }
                 }
               ]
             }
