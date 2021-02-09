@@ -18,7 +18,8 @@
     "@sanity/vision",
     "dashboard-widget-feed",
     "dashboard-widget-document-chart",
-    "dashboard-widget-document-list"
+    "dashboard-widget-document-list",
+    "@sanity/color-input"
   ],
   "parts": [
     {

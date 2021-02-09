@@ -50,6 +50,9 @@ export default {
       name: 'menuitems',
       description: 'Add pages below to feature in the main menu',
       type: 'array',
+      options: {
+        canDuplicate: true
+      },
       of: [
         {
           type: 'object',

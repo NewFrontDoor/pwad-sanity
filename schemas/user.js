@@ -33,16 +33,22 @@ export default {
       type: 'boolean'
     },
     {
-      name: 'profilePhoto',
-      title: 'Profile photo',
+      name: 'invoiceStatus',
+      title: 'Invoice Status',
+      type: 'string',
+      options: {
+        list: ['draft', 'open', 'paid', 'uncollectible', 'void']
+      }
+    },
+    {
+      name: 'stripeCustomerId',
+      title: 'Customer ID',
       type: 'string'
     },
     {
-      name: 'googleProviderId',
-      title: 'Google Provider Id',
-      readOnly: 'true',
-      type: 'string',
-      hidden: true
+      name: 'periodEndDate',
+      title: 'Subscription period end date',
+      type: 'datetime'
     },
     {
       name: 'shortlist',
@@ -57,6 +63,50 @@ export default {
             {type: 'scripture'},
             {type: 'prayer'}
           ]
+        }
+      ]
+    },
+    {
+      name: 'presentationOptions',
+      title: 'Presentation Options',
+      type: 'object',
+      fields: [
+        {
+          name: 'font',
+          type: 'string',
+          title: 'Font',
+          options: {
+            list: [
+              {title: 'Arial', value: 'arial'},
+              {title: 'Helvetica', value: 'helvetica'},
+              {title: 'Arial Rounded', value: 'arounded'}
+            ]
+          }
+        },
+        {
+          name: 'background',
+          type: 'string',
+          title: 'Background',
+          options: {
+            list: [
+              {title: 'Presbyterian image background', value: 'pca'},
+              {title: 'White', value: 'white'},
+              {title: 'Black', value: 'black'},
+              {title: 'Beige', value: 'beige'}
+            ]
+          }
+        },
+        {
+          name: 'ratio',
+          type: 'string',
+          title: 'Ratio',
+          options: {
+            list: [
+              {title: '16:9', value: 'LAYOUT_16x9'},
+              {title: '16:10', value: 'LAYOUT_16x10'},
+              {title: '4:3', value: 'LAYOUT_4x3'}
+            ]
+          }
         }
       ]
     },

@@ -1,5 +1,11 @@
+import React from 'react';
 import {MdLink} from 'react-icons/md';
 import {FiAnchor} from 'react-icons/fi';
+
+const ColourRenderer = props => {
+  const {hex} = props.color || '#000';
+  return <span style={{color: hex}}>{props.children}</span>;
+};
 
 export default {
   title: 'Content',
@@ -77,6 +83,22 @@ export default {
               icon: FiAnchor
             },
             fields: [{name: 'id', type: 'string', title: 'ID'}]
+          },
+          {
+            name: 'colourPicker',
+            type: 'object',
+            title: 'Text Colour',
+            blockEditor: {
+              icon: () => 'C',
+              render: ColourRenderer
+            },
+            fields: [
+              {
+                Title: 'Colour',
+                name: 'color',
+                type: 'color'
+              }
+            ]
           }
         ]
       }
