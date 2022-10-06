@@ -73,6 +73,7 @@ export default {
                       description: 'Pick a page from the dropdown list below',
                       to: [
                         {type: 'pageContent'},
+                        {type: 'restrictedContent'},
                         {type: 'hymn'},
                         {type: 'prayer'},
                         {type: 'liturgy'},
