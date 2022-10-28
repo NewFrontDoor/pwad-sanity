@@ -9,6 +9,7 @@ import {
 	MdMusicNote,
 	MdLibraryBooks,
 	MdAttachFile,
+	MdLink,
 	MdQueueMusic,
 	MdLock
 } from "react-icons/md";
@@ -83,7 +84,11 @@ export default () => {
 							S.listItem()
 								.title("Files")
 								.icon(MdAttachFile)
-								.child(S.documentTypeList("asset").title("Files"))
+								.child(S.documentTypeList("asset").title("Files")),
+								S.listItem()
+								.title("External URLs")
+								.icon(MdLink)
+								.child(S.documentTypeList("externalUrl").title("External URLs"))
 						])
 				),
 			S.divider(),
