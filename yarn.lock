@@ -882,9 +882,10 @@
     make-error "^1.3.0"
     object-assign "^4.1.1"
 
-"@sanity/color-input@^1.148.1":
-  version "1.148.1"
-  resolved "https://registry.npmjs.org/@sanity/color-input/-/color-input-1.148.1.tgz#cdcfe129dcb6390df05243920836c7e8ffe2c027"
+"@sanity/color-input@^1.150.1":
+  version "1.150.1"
+  resolved "https://registry.npmjs.org/@sanity/color-input/-/color-input-1.150.1.tgz#2a538af5c4efc4632d554c3aaff4d14adfad9774"
+  integrity sha512-CxanULtnpAId7v4MUOQ4KNHzQLSs+U0anGar2t1aC+LzMlmzZRqfllkeyhOkN0sbVwjA5ehCwdK7pUIjAozt8A==
   dependencies:
     lodash "^4.17.15"
     react-color "^2.13.8"
@@ -7509,6 +7510,8 @@ pptxgenjs@gitbrent/PptxGenJS#master:
   version "3.2.0-beta"
   resolved "https://codeload.github.com/gitbrent/PptxGenJS/tar.gz/a1a5d200a2d2b82485943c15fc9a57c15f7a4ff8"
   dependencies:
+    "@types/jszip" "^3.1.7"
+    "@types/node" "^13.7.1"
     https "^1.0.0"
     image-size "^0.8.3"
     jszip "^3.2.2"
