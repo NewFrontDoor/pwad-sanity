@@ -14,7 +14,7 @@ import {
 	MdLock
 } from "react-icons/md";
 import { FiBookOpen } from "react-icons/fi";
-import { FaPrayingHands } from "react-icons/fa";
+import { FaPrayingHands, FaBible } from "react-icons/fa";
 
 export default () => {
 	return S.list()
@@ -85,10 +85,18 @@ export default () => {
 								.title("Files")
 								.icon(MdAttachFile)
 								.child(S.documentTypeList("asset").title("Files")),
-								S.listItem()
+							S.listItem()
 								.title("External URLs")
 								.icon(MdLink)
-								.child(S.documentTypeList("externalUrl").title("External URLs"))
+								.child(S.documentTypeList("externalUrl").title("External URLs")),
+							S.listItem()
+								.title("Devotions")
+								.icon(FaBible)
+								.child(
+									S.documentTypeList("devotion")
+										.title("Devotions")
+										.defaultOrdering([{ field: "date", direction: "desc" }])
+								)
 						])
 				),
 			S.divider(),
