@@ -4,7 +4,6 @@ import client from "part:@sanity/base/client";
 import groq from "groq";
 
 // const isUniqueDate = (date, context) => {
-// 	console.log(date, context);
 // 	const { document } = context;
 // 	const id = document._id.replace(/^drafts\./, "");
 // 	const params = {
@@ -18,8 +17,6 @@ import groq from "groq";
 //     !(_id in ['${params.draft}', '${params.published}']) &&
 //     date == '${date}'
 //   ][0]._id)`;
-
-// 	console.log(query, params);
 
 // 	return client.fetch(query);
 // };
