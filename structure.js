@@ -93,7 +93,7 @@ export default () => {
 								.title("Devotions")
 								.icon(FaBible)
 								.child(
-									S.documentTypeList("devotion")
+									S.documentTypeList("devotionContent")
 										.title("Devotions")
 										.defaultOrdering([{ field: "date", direction: "desc" }])
 								)

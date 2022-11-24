@@ -1,7 +1,7 @@
 import React from "react";
 import MenuReference from "../menu-refs";
-import client from "part:@sanity/base/client";
-import groq from "groq";
+// import client from "part:@sanity/base/client";
+// import groq from "groq";
 
 // const isUniqueDate = (date, context) => {
 // 	const { document } = context;
@@ -13,7 +13,7 @@ import groq from "groq";
 // 	};
 
 // 	const query = groq`!defined(*[
-//     _type == 'devotion' &&
+//     _type == 'devotionContent' &&
 //     !(_id in ['${params.draft}', '${params.published}']) &&
 //     date == '${date}'
 //   ][0]._id)`;
@@ -22,7 +22,7 @@ import groq from "groq";
 // };
 
 export default {
-	name: "devotion",
+	name: "devotionContent",
 	title: "Devotion",
 	type: "document",
 	fields: [
@@ -34,7 +34,8 @@ export default {
 		{
 			name: "date",
 			title: "Devotion Date",
-			type: "date"
+			type: "date",
+			validation: Rule=>Rule.required()
 			// validation: (Rule) =>
 			// 	Rule.custom(async (value, context) => {
 			// 		const isUnique = await isUniqueDate(value, context);

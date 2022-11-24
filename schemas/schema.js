@@ -24,7 +24,7 @@ import relativeUrl from "./relative-url";
 import externalUrl from "./external-url";
 import video from "./video";
 import restrictedContent from "./restricted-content";
-import devotion from "./devotion";
+import devotionContent from "./devotion-content";
 
 export default createSchema({
 	name: "default",
@@ -52,6 +52,6 @@ export default createSchema({
 		externalUrl,
 		video,
 		restrictedContent,
-		devotion
+		devotionContent
 	])
 });
