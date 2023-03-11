@@ -32,10 +32,24 @@ export default {
 			type: "string"
 		},
 		{
+			name: "slug",
+			title: "Slug",
+			type: "slug",
+			options: {
+				source: "title",
+				maxLength: 200, // Will be ignored if slugify is set
+				slugify: (input) =>
+					input
+						.toLowerCase()
+						.replace(/\s+/g, "-")
+						.slice(0, 200)
+			}
+		},
+		{
 			name: "date",
 			title: "Devotion Date",
 			type: "date",
-			validation: Rule=>Rule.required()
+			validation: (Rule) => Rule.required()
 			// validation: (Rule) =>
 			// 	Rule.custom(async (value, context) => {
 			// 		const isUnique = await isUniqueDate(value, context);
