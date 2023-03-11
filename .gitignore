@@ -10,3 +10,6 @@ yarn-error.log*
 # secrets shh...
 .env
 !.env.example
+
+#data imports
+/imports*

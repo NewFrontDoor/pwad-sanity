@@ -25,6 +25,7 @@
     "@sanity/vision": "0.147.10-document-actions.37",
     "@u-wave/react-vimeo": "^0.8.1",
     "get-video-id": "^3.1.4",
+    "groq": "^2.33.2",
     "pptxgenjs": "gitbrent/PptxGenJS#master",
     "prop-types": "^15.6",
     "react": "^16.2",
