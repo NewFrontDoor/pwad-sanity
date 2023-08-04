@@ -71,7 +71,7 @@ export default {
 		},
 		prepare(selection) {
 			const { id } = selection;
-			const title = `${selection.date} ${selection.title}`;
+			const title = `${selection.title}`;
 			return {
 				title,
 				media: <MenuReference id={id} />

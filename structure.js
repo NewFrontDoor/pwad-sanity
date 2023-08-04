@@ -95,7 +95,10 @@ export default () => {
 								.child(
 									S.documentTypeList("devotionContent")
 										.title("Devotions")
-										.defaultOrdering([{ field: "date", direction: "desc" }])
+										.defaultOrdering([
+											{ field: "date", direction: "asc" },
+											{ field: "title", direction: "asc" }
+										])
 								)
 						])
 				),
