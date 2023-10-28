@@ -74,7 +74,8 @@ export default {
 												{ type: "liturgy" },
 												{ type: "scripture" },
 												{ type: "asset" },
-												{ type: "externalUrl" }
+												{ type: "externalUrl" },
+												{ type: "customInternalPage" }
 											]
 										},
 										{

@@ -25,6 +25,7 @@ import externalUrl from "./external-url";
 import video from "./video";
 import restrictedContent from "./restricted-content";
 import devotionContent from "./devotion-content";
+import customInternalPage from "./custom-internal-page";
 
 export default createSchema({
 	name: "default",
@@ -52,6 +53,7 @@ export default createSchema({
 		externalUrl,
 		video,
 		restrictedContent,
-		devotionContent
+		devotionContent,
+		customInternalPage
 	])
 });

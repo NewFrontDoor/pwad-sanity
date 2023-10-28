@@ -90,6 +90,10 @@ export default () => {
 								.icon(MdLink)
 								.child(S.documentTypeList("externalUrl").title("External URLs")),
 							S.listItem()
+								.title("Custom Internal Pages")
+								.icon(MdLink)
+								.child(S.documentTypeList("customInternalPage").title("Custom Internal Pages")),
+							S.listItem()
 								.title("Devotions")
 								.icon(FaBible)
 								.child(
